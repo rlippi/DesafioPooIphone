@@ -1,0 +1,40 @@
+
+
+import java.util.Scanner;
+
+public class ContaTerminal {
+
+    public static void main(String[] args) throws Exception {
+
+        int numero;
+        String agencia, nomeCliente, numeroContaString;
+        double saldo = 0.0;
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Por favor, digite o número da Agência !");
+        agencia = sc.next();
+
+        System.out.println("Digite o número da Conta (ex: 067-8): ");
+        numeroContaString = sc.next();
+
+        // Remover caracteres não numéricos (como hífen) da string
+        numeroContaString = numeroContaString.replaceAll("[^\\d]", "");
+
+        // Converter a string para um número inteiro
+        numero = Integer.parseInt(numeroContaString);
+
+        System.out.println("Digite o Nome do Cliente: ");
+        nomeCliente = sc.next();
+
+        System.out.println("Digite o Saldo Inicial: ");
+        saldo = sc.nextDouble();
+
+        System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numero + " e seu saldo " + saldo + " já está disponível para saque.");
+    
+        sc.close();
+    }
+}
+
+
+
